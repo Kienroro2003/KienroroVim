@@ -1,3 +1,4 @@
+-- lua/josean/plugins/linting.lua
 return {
   "mfussenegger/nvim-lint",
   event = { "BufReadPre", "BufNewFile" },
@@ -10,8 +11,8 @@ return {
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
       svelte = { "eslint_d" },
-      c = { "cpplint" }, -- Dùng cpplint cho C
-      cpp = { "cpplint" }, -- Dùng cpplint cho C++
+      c = { "cpplint" },
+      cpp = { "cpplint", "--filter=-build/include" }, -- << DÒNG ĐÃ THAY ĐỔI
       python = { "pylint" },
     }
 

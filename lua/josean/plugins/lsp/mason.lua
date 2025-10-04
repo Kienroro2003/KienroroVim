@@ -47,6 +47,8 @@ return {
           "clang-format",
           "codelldb",
           "cpplint",
+          "pylint",
+          "eslint",
         },
       })
     end,
