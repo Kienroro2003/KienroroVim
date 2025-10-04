@@ -16,12 +16,6 @@ keymap.set("n", "<leader>sh", "<C-w>s", { desc = "vsplit window horizontally" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make vsplits equal size" }) -- make split windows equal width & height
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current vsplit" }) -- close current split window
 
-keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
-keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
-keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
-keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
-keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
-
 keymap.set("n", "<leader>rr", ":w <bar> exec '!python3 '.shellescape('%')<CR>")
 
 local compile_and_run = {
@@ -40,7 +34,7 @@ vim.api.nvim_create_autocmd("FileType", {
         local term_cmd = cmd
           :gsub("%%:r", vim.fn.fnameescape(vim.fn.fnamemodify(args.file, ":r")))
           :gsub("%%", vim.fn.fnameescape(args.file))
-        vim.cmd("split | terminal " .. term_cmd)
+        vim.cmd("vsplit | terminal " .. term_cmd)
       end, { buffer = args.buf, desc = "Compile and Run" })
     end
   end,

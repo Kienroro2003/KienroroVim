@@ -12,7 +12,7 @@ return {
       typescriptreact = { "eslint_d" },
       svelte = { "eslint_d" },
       c = { "cpplint" },
-      cpp = { "cpplint", "--filter=-build/include" }, -- << DÒNG ĐÃ THAY ĐỔI
+      cpp = { "cpplint" }, -- << DÒNG ĐÃ THAY ĐỔI
       python = { "pylint" },
     }
 
