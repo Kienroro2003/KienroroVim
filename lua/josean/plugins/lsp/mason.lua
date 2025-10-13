@@ -50,6 +50,7 @@ return {
           "cpplint",
           "pylint",
           "eslint",
+          "checkstyle",
         },
       })
     end,
